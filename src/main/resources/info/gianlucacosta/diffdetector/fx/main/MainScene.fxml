@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--^
+  ===========================================================================
+  Diff Detector - FX
+  ===========================================================================
+  Copyright (C) 2017 Gianluca Costa
+  ===========================================================================
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  ===========================================================================
+-->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+      prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="600.0">
+            <children>
+                <Label text="Server:">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="serverField" prefHeight="25.0" prefWidth="277.0"/>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+        </HBox>
+        <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <items>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Left:">
+                            <VBox.margin>
+                                <Insets bottom="5.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <ScrollPane fx:id="leftPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0"
+                                    prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="Right:">
+                            <VBox.margin>
+                                <Insets bottom="5.0"/>
+                            </VBox.margin>
+                        </Label>
+                        <ScrollPane fx:id="rightPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0"
+                                    prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+                    </children>
+                </VBox>
+            </items>
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+        </SplitPane>
+        <VBox alignment="CENTER" prefHeight="81.0" prefWidth="800.0">
+            <children>
+                <Button fx:id="compareButton" mnemonicParsing="false" onAction="#compare" text="Compare"/>
+                <ProgressIndicator fx:id="progressIndicator" prefHeight="31.0" prefWidth="800.0">
+                    <VBox.margin>
+                        <Insets bottom="5.0" top="5.0"/>
+                    </VBox.margin>
+                </ProgressIndicator>
+            </children>
+        </VBox>
+    </children>
+</VBox>
